@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Card,
   CardContent,
@@ -6,15 +8,19 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { categories } from "./categories"
+import { useAtom } from "jotai"
+import { jotaiCategories } from "./providers"
 
 export default function Home() {
+  const [categories, setCategories] = useAtom(jotaiCategories)
   return (
     <main className="container p-8">
       {categories.map((category: { name: string; widgets: any }) => {
         return (
           <div key={category.name} className="mb-8 space-y-4">
-            <h1 className="text-2xl font-bold text-primary">{category.name}</h1>
+            <h1 className="text-2xl font-bold text-primary">
+              {category.name.toLocaleUpperCase()}
+            </h1>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {category.widgets.map((widget: { id: number; title: string }) => {
                 return (

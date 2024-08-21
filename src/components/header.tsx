@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import GlobalAddWidget from "@/components/globalAddWidget"
 import Link from "next/link"
 
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
         <Link href={"/"} className="text-lg font-bold">
           ZED DASHY
         </Link>
-        <Button variant="outline">Add Widgets +</Button>
+        <GlobalAddWidget />
       </nav>
     </div>
   )

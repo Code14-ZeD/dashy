@@ -1,4 +1,4 @@
-export const categories = [
+export const demoCategories = [
   {
     name: "espm",
     widgets: [
