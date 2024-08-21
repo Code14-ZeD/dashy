@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
+import { JotaiProvider } from "./providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-backgound min-h-dvh font-sans antialiased">
-        <Header />
-        {children}
-        <Footer />
+        <JotaiProvider>
+          <Header />
+          {children}
+          <Footer />
+        </JotaiProvider>
       </body>
     </html>
   )
