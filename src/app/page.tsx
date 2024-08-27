@@ -65,10 +65,10 @@ export default function Component() {
       widget.content.toLowerCase().includes(searchTerm.toLowerCase()),
   )
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="container flex min-h-screen flex-col">
       <main className="flex-1 p-6">
         {searchTerm ? (
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredWidgets.map((widget) => (
               <Card key={widget.id}>
                 <CardHeader>
@@ -130,7 +130,7 @@ export default function Component() {
                   </DialogContent>
                 </Dialog>
               </div>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {category.widgets
                   .filter((widget) => widget.visible)
                   .map((widget) => (
